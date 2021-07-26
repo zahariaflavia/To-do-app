@@ -19,9 +19,12 @@ const AddTask=()=>{
     return <div className="items">
         <h2>Add activity</h2>
         <form onSubmit={handleSubmit} className="form">
-        <div className='form-control'>
-            <label htmlFor='name'>Name : </label>
-            <input
+          <h3>What are your activities for today?</h3>
+        <div>
+            <label htmlFor='name'>Activity Description: </label>
+            </div>
+            <div>
+            <input 
               type='text'
               id='name'
               name='name'
@@ -30,9 +33,9 @@ const AddTask=()=>{
               required
             />
             </div>
-            <button type='submit' className='button' >
-            add 
-          </button>
+            <div>
+            <button type='submit' className='button' >Add </button>
+          </div>
             </form>
             
     </div>
