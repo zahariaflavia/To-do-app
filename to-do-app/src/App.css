@@ -11,6 +11,21 @@ text-align:center;
 height:50px;
 }
 
+.list{
+  background-image: linear-gradient(180deg, #FF5733, yellow);;
+}
+
+.table{
+ margin:auto;
+ margin-top:40px;
+ background-image: linear-gradient(180deg, #FF5733, yellow);;
+}
+
+.table td{
+  padding: 15px 30px;
+  /* text-align: center; */
+  text-align: start;
+}
 .nav{
   background:#FF5733;
 }
@@ -82,5 +97,5 @@ input {
   width:100 px;
   height:40px;
   margin:20px 0px;
-  border-radius: 4 px;
+  border-radius: 30px;
 }

@@ -14,22 +14,19 @@ const DeleteTask=()=>{
         localStorage.setItem("tasks",JSON.stringify(aux));
         
     }
-    return(<div>
+    return(<div className="items">
+        <table className="table">
       {tasks.map((task)=>{
 
           const {id,name}=task;
           return (
-              <div key={id}>
-
-                  <h4>{name}</h4>
-                  <button onClick={()=>removeTask(id)}>delete</button>
-              </div>
+              <tr>
+                  <td>{name}</td>
+                  <td> <button  className="button" onClick={()=>removeTask(id)}>Delete</button></td>
+              </tr>
           );
       })}
-
-
-
-
+      </table>
     </div>);
 
 }
