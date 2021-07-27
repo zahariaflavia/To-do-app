@@ -15,7 +15,7 @@ const DeleteTask=()=>{
         
     }
     return(<div className="items">
-        <table className="table">
+        {tasks.length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
       {tasks.map((task)=>{
 
           const {id,name}=task;
@@ -26,7 +26,19 @@ const DeleteTask=()=>{
               </tr>
           );
       })}
-      </table>
+      </table>)}
+        {/* <table className="table">
+      {tasks.map((task)=>{
+
+          const {id,name}=task;
+          return (
+              <tr>
+                  <td>{name}</td>
+                  <td> <button  className="button" onClick={()=>removeTask(id)}>Delete</button></td>
+              </tr>
+          );
+      })}
+      </table> */}
     </div>);
 
 }

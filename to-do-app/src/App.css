@@ -8,11 +8,11 @@
 
 .items{
 text-align:center;
-height:50px;
+/* height:50px; */
 }
 
 .list{
-  background-image: linear-gradient(180deg, #FF5733, yellow);;
+  background:#F4F2C2;
 }
 
 .table{
@@ -22,7 +22,7 @@ height:50px;
 }
 
 .table td{
-  padding: 15px 30px;
+  padding: 15px 50px;
   /* text-align: center; */
   text-align: start;
 }
