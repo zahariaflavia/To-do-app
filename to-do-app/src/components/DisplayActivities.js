@@ -25,7 +25,7 @@
             );
         })}
         {tasks.filter((task)=>task.status==='complete').map((task)=>{
-            const {id,name,status}=task;
+            const {id,name}=task;
             return(
                 <tr key={id}>
                 <td>{name}</td>
