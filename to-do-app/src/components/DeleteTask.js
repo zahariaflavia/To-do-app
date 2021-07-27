@@ -1,12 +1,8 @@
-    import { useState,useEffect } from "react";
+    import { useState } from "react";
+    import HighlightOffIcon from '@material-ui/icons/HighlightOff';
     const DeleteTask=()=>{
         const data=JSON.parse(localStorage.getItem("tasks"))||[];
-        //console.log(data);
         const [tasks,setTasks]=useState(data);
-        // useEffect(()=>{
-        //     const data=JSON.parse(localStorage.getItem("tasks"));
-        //     setTasks(data);
-        // },[])
 
         const removeTask=(id)=>{
             let aux=tasks.filter((task)=>task.id!==id)
@@ -15,14 +11,15 @@
             
         }
         return(<div className="items">
-            {tasks.length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
-        {tasks.map((task)=>{
+            {tasks.filter((task)=>task.status==="incomplete").length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
+        {tasks.filter((task)=>task.status==="incomplete").map((task)=>{
 
-            const {id,name}=task;
+            const {id,name,date}=task;
             return (
-                <tr>
+                <tr key={id}>
+                    <td>{date.slice(0,10)}</td>
                     <td>{name}</td>
-                    <td> <button  className="button" onClick={()=>removeTask(id)}>Delete</button></td>
+                    <td><HighlightOffIcon onClick={()=>removeTask(id)}/></td>
                 </tr>
             );
         })}

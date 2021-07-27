@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
       const [name,setName]=useState('');
       const data=JSON.parse(localStorage.getItem("tasks")) || [];
       const [tasks,setTasks]=useState(data);
-      const[date,setDate]=useState(new Date());
+      const [date, setDate] = useState(new Date());
       const handleSubmit=(e)=>{
           e.preventDefault();
           if(name){
@@ -43,7 +43,7 @@ import "react-datepicker/dist/react-datepicker.css";
                 <div>
                 <label htmlFor='date'>Choose a date: </label>
                 </div>
-              <DatePicker selected={date} onChange={(e) => setDate(e)} />
+              <DatePicker selected={date} onChange={(d) => setDate(d)} />
               </div>
               <div>
               <button type='submit' className='button' >Add </button>

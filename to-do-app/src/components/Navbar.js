@@ -6,7 +6,7 @@ const Navbar=()=>{
          <li className="nav-items"><Link className="link" to="/add">Add Task</Link></li>
          <li className="nav-items"><Link className="link" to="/edit">Edit Task</Link></li>
          <li className="nav-items"><Link className="link" to="/delete">Delete Task</Link></li>
-         <li className="nav-items"><Link className="link" to="/done">Completed Tasks</Link></li>
+         <li className="nav-items"><Link className="link" to="/upcoming">Upcoming Activities</Link></li>
      </ul>
     </div>
 }

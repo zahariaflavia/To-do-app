@@ -5,6 +5,7 @@ import Navbar from'./components/Navbar'
 import AddTask from './components/AddTask';
 import DeleteTask from './components/DeleteTask';
 import DisplayActivities from './components/DisplayActivities';
+import EditTask from './components/EditTask';
 function App() {
   return (
     <div className="app">
@@ -14,9 +15,9 @@ function App() {
         <Switch>
           <Route exact path="/"><DisplayActivities/></Route>
           <Route path="/add"><AddTask/></Route>
-          <Route path="/edit"></Route>
+          <Route path="/edit"><EditTask/></Route>
           <Route path="/delete"><DeleteTask/></Route>
-          <Route path="/done"></Route>
+          <Route path="/upcoming"></Route>
         </Switch>
       </Router>
     </div>
