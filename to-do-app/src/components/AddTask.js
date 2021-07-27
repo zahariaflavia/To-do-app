@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 const AddTask=()=>{
 
     const [name,setName]=useState('');
-    const data=JSON.parse(localStorage.getItem("tasks")) || [];
+    const data=JSON.parse(window.localStorage.getItem("tasks")) || [];
+    
     const [tasks,setTasks]=useState(data);
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -12,6 +13,7 @@ const AddTask=()=>{
             const newTask={id:uuidv4(),name:name,status:'incomplete'};
             setTasks([...tasks,newTask])
             window.localStorage.setItem("tasks",JSON.stringify([...tasks,newTask]));
+           // window.localStorage.clear();
             setName('');
         }
         

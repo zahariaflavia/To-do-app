@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Header from './components/Header'
 import Navbar from'./components/Navbar'
 import AddTask from './components/AddTask';
+import DeleteTask from './components/DeleteTask';
 function App() {
   return (
     <div className="app">
@@ -13,7 +14,7 @@ function App() {
           <Route exact path="/"></Route>
           <Route path="/add"><AddTask/></Route>
           <Route path="/edit"></Route>
-          <Route path="/delete"></Route>
+          <Route path="/delete"><DeleteTask/></Route>
           <Route path="/done"></Route>
         </Switch>
       </Router>
