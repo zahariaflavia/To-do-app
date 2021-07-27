@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Navbar from'./components/Navbar'
 import AddTask from './components/AddTask';
 import DeleteTask from './components/DeleteTask';
+import DisplayActivities from './components/DisplayActivities';
 function App() {
   return (
     <div className="app">
@@ -11,7 +12,7 @@ function App() {
       <Header/>
       <Navbar/>
         <Switch>
-          <Route exact path="/"></Route>
+          <Route exact path="/"><DisplayActivities/></Route>
           <Route path="/add"><AddTask/></Route>
           <Route path="/edit"></Route>
           <Route path="/delete"><DeleteTask/></Route>

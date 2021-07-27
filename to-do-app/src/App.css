@@ -18,7 +18,8 @@ text-align:center;
 .table{
  margin:auto;
  margin-top:40px;
- background-image: linear-gradient(180deg, #FF5733, yellow);;
+ background-image: linear-gradient(180deg, #FF5733, yellow);
+ border-radius: 30px;
 }
 
 .table td{
@@ -70,6 +71,7 @@ form {
   margin: 0 auto;
   max-width: 500px;
   padding: 30px 50px;
+  border-radius:35px;
 }
 
 input {
