@@ -3,7 +3,7 @@
     const DeleteTask=()=>{
         const data=JSON.parse(localStorage.getItem("tasks"))||[];
         const [tasks,setTasks]=useState(data);
-
+        const compareDates=(t1,t2)=>t1.date.localeCompare(t2.date);
         const removeTask=(id)=>{
             let aux=tasks.filter((task)=>task.id!==id)
             setTasks(aux);
@@ -12,7 +12,7 @@
         }
         return(<div className="items">
             {tasks.filter((task)=>task.status==="incomplete").length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
-        {tasks.filter((task)=>task.status==="incomplete").map((task)=>{
+        {tasks.filter((task)=>task.status==="incomplete").sort(compareDates).map((task)=>{
 
             const {id,name,date}=task;
             return (

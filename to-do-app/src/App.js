@@ -6,6 +6,7 @@ import AddTask from './components/AddTask';
 import DeleteTask from './components/DeleteTask';
 import DisplayActivities from './components/DisplayActivities';
 import EditTask from './components/EditTask';
+import UpcomingActivities from './components/UpcomingActivities';
 function App() {
   return (
     <div className="app">
@@ -17,7 +18,7 @@ function App() {
           <Route path="/add"><AddTask/></Route>
           <Route path="/edit"><EditTask/></Route>
           <Route path="/delete"><DeleteTask/></Route>
-          <Route path="/upcoming"></Route>
+          <Route path="/upcoming"><UpcomingActivities/></Route>
         </Switch>
       </Router>
     </div>

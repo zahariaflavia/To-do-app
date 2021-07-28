@@ -5,8 +5,7 @@
             let today = new Date();
             let month=today.getMonth()+1
             let month1=month<=10?('0'+month):(month)
-            let currentDate=today.getFullYear()+'-'+month1+'-'+(today.getDate()-1); ///fix
-            console.log(currentDate)
+            let currentDate=today.getFullYear()+'-'+month1+'-'+today.getDate();
             const [tasks,setTasks]=useState(data);
             const handleChange=(id)=>{
                 const aux=[...tasks];
@@ -16,7 +15,7 @@
                 window.localStorage.setItem("tasks",JSON.stringify(aux));
             }
             return <div className="items">
-                {tasks.filter((task)=>{return task.status==='incomplete'&&task.date.slice(0,10)===currentDate}).length===0?(<h2>Congratulations! You completed all your activities!</h2>):(<h3>Activities to be completed today: {tasks.filter((task)=>{return task.status==='incomplete'&&task.date.slice(0,10)===currentDate}).length}</h3>)}
+                {tasks.filter((task)=>{return task.status==='incomplete'&&task.date.slice(0,10)===currentDate}).length===0?(<h2>Congratulations! You completed all your activities for today!</h2>):(<h3>Activities to be completed today: {tasks.filter((task)=>{return task.status==='incomplete'&&task.date.slice(0,10)===currentDate}).length}</h3>)}
                 <table className="table">
                     <tbody>
             {tasks.filter((task)=>{return task.status==='incomplete'&&task.date.slice(0,10)===currentDate}).map((task)=>{

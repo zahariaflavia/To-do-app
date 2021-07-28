@@ -23,7 +23,7 @@ import "react-datepicker/dist/react-datepicker.css";
           
       }
       return <div className="items">
-          <h2>Add activity</h2>
+          
           <form onSubmit={handleSubmit} className="form">
             <h3>What are your activities for today?</h3>
           <div>

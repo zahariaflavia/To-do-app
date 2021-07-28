@@ -3,9 +3,9 @@ const Navbar=()=>{
     return <div className="items nav">
      <ul className="nav-container">
          <li className="nav-items"><Link className="link" to="/">Tasks For Today</Link></li>
-         <li className="nav-items"><Link className="link" to="/add">Add Task</Link></li>
-         <li className="nav-items"><Link className="link" to="/edit">Edit Task</Link></li>
-         <li className="nav-items"><Link className="link" to="/delete">Delete Task</Link></li>
+         <li className="nav-items"><Link className="link" to="/add">Add Activity</Link></li>
+         <li className="nav-items"><Link className="link" to="/edit">Edit Activity</Link></li>
+         <li className="nav-items"><Link className="link" to="/delete">Delete Activity</Link></li>
          <li className="nav-items"><Link className="link" to="/upcoming">Upcoming Activities</Link></li>
      </ul>
     </div>

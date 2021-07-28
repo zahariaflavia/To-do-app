@@ -8,7 +8,7 @@ const EditTask=()=>{
         console.log("uwe");
     }
 
-
+const compareDates=(t1,t2)=>t1.date.localeCompare(t2.date);
    
     return (
         <div>
@@ -16,7 +16,7 @@ const EditTask=()=>{
             {tasks.filter((task)=>task.status==="incomplete").length===0?(<h3>There are no incomplete activities to be displayed</h3>):(<table className="table">
                 <tbody>
                     
-        {tasks.filter((task)=>task.status==='incomplete').map((task)=>{
+        {tasks.filter((task)=>task.status==='incomplete').sort(compareDates).map((task)=>{
             const {id,name,date}=task;
             return(
                 <tr key={id}>
