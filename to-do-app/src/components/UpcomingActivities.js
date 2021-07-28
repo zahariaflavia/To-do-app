@@ -1,13 +1,21 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 const UpcomingActivities=()=>{
-        let data=JSON.parse(localStorage.getItem("tasks"))||[];
         let today = new Date();
         let month=today.getMonth()+1
         let month1=month<=10?('0'+month):(month)
         let currentDate=today.getFullYear()+'-'+month1+'-'+today.getDate();
-        const [tasks,setTasks]=useState(data);
+        const [tasks,setTasks]=useState([]);
         const compareDates=(t1,t2)=>t1.date.localeCompare(t2.date);
-            
+        useEffect(()=>{
+            const data=JSON.parse(localStorage.getItem("tasks"));
+            if(data){
+                setTasks(data);
+            }
+        },[])
+        
+        useEffect(()=>{
+          localStorage.setItem("tasks",JSON.stringify(tasks));
+        },[tasks])
     return(
         <div className="items">
             <table className="table">

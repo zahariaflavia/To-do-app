@@ -1,13 +1,23 @@
-    import { useState } from "react";
+    import { useState,useEffect } from "react";
     import HighlightOffIcon from '@material-ui/icons/HighlightOff';
     const DeleteTask=()=>{
-        const data=JSON.parse(localStorage.getItem("tasks"))||[];
-        const [tasks,setTasks]=useState(data);
+        const [tasks,setTasks]=useState([]);
+
+        useEffect(()=>{
+            const data=JSON.parse(localStorage.getItem("tasks"));
+            if(data){
+                setTasks(data);
+            }
+        },[])
+        
+        useEffect(()=>{
+          localStorage.setItem("tasks",JSON.stringify(tasks));
+        },[tasks])
+        
         const compareDates=(t1,t2)=>t1.date.localeCompare(t2.date);
         const removeTask=(id)=>{
             let aux=tasks.filter((task)=>task.id!==id)
             setTasks(aux);
-            localStorage.setItem("tasks",JSON.stringify(aux));
             
         }
         return(<div className="items">
