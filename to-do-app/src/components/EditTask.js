@@ -41,7 +41,7 @@
             return (
                 <div>
                     <div className="items">
-                    {tasks.filter((task)=>task.status==="incomplete").length===0?(<h3>There are no incomplete activities to be displayed</h3>):(<table className="table">
+                    {tasks.filter((task)=>task.status==="incomplete").length===0?(<h2>There are no incomplete activities to be displayed</h2>):(<table className="table">
                         <tbody>
                             
                 {tasks.filter((task)=>task.status==='incomplete').sort(compareDates).map((task)=>{
@@ -49,7 +49,6 @@
                     return(
                         <tr key={id}>
                         <td>{edit===id?(<DatePicker selected={dateEdit} onChange={(d) => setDateEdit(d)} />):(<td>{date.slice(0,10)}</td>)}</td>   
-                        {/* <td>{date.slice(0,10)}</td>    */}
                         <td>{edit===id?(<input type="text" value={editText} onChange={(e)=>setEditText(e.target.value)}/>):(<td>{name}</td>)}</td>
                         <td>{edit===id?(<button className="button" onClick={()=>handleSave(id)}>Save</button>):(<EditIcon onClick={()=>handleEdit(name,id,date)}/>)}</td> 
                         </tr>

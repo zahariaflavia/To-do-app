@@ -9,7 +9,6 @@
 .items{
 text-align:center;
 }
-
 .list{
   background:#F4F2C2;
 }
@@ -64,6 +63,7 @@ margin:auto;
 
 .items>h1{
   margin:auto;
+  justify-items: auto;
 }
 
 form {

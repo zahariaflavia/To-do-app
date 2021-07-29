@@ -1,9 +1,7 @@
 import {useState,useEffect} from 'react'
 const UpcomingActivities=()=>{
-        let today = new Date();
-        let month=today.getMonth()+1
-        let month1=month<=10?('0'+month):(month)
-        let currentDate=today.getFullYear()+'-'+month1+'-'+today.getDate();
+    let today = new Date();
+    let currentDate=today.toJSON().slice(0,10);
         const [tasks,setTasks]=useState([]);
         const compareDates=(t1,t2)=>t1.date.localeCompare(t2.date);
         useEffect(()=>{
