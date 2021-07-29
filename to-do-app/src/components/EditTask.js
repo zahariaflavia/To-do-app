@@ -40,7 +40,7 @@ const EditTask = () => {
         setTimeout(() => {
           setDateError("");
           setDateEdit(new Date());
-        }, 3000);
+        }, 2000);
       }
 
       if (editText && auxDate.localeCompare(currentDate) >= 0) {
@@ -59,7 +59,7 @@ const EditTask = () => {
         setNameError("The name input cannot be empty!");
         setTimeout(() => {
           setNameError("");
-        }, 3000);
+        }, 2000);
       }
     }
   };
