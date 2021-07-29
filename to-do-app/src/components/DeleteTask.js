@@ -21,7 +21,9 @@
             
         }
         return(<div className="items">
-            {tasks.filter((task)=>task.status==="incomplete").length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
+            
+        {tasks.filter((task)=>task.status==="incomplete").length===0?(<h2>There are no activities to pe displayed</h2>):( <table className="table">
+        <tbody>
         {tasks.filter((task)=>task.status==="incomplete").sort(compareDates).map((task)=>{
 
             const {id,name,date}=task;
@@ -33,6 +35,7 @@
                 </tr>
             );
         })}
+        </tbody>
         </table>)}
            
         </div>);

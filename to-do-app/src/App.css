@@ -22,7 +22,6 @@ text-align:center;
 
 .table td{
   padding: 15px 50px;
-  /* text-align: center; */
   text-align: start;
   font-weight: bold;
 }
@@ -97,4 +96,7 @@ input {
   height:40px;
   margin:20px 0px;
   border-radius: 30px;
+}
+#date{
+  color:#FF5733;
 }
