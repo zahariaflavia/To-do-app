@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,200&family=Oswald:wght@300&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.items {
+  text-align: center;
+}
+.list {
+  background: #f4f2c2;
+}
+
+.table {
+  margin: auto;
+  margin-top: 45px;
+  background-image: linear-gradient(180deg, #ff5733, yellow);
+  border-radius: 30px;
+}
+
+.table td {
+  padding: 15px 50px;
+  text-align: start;
+  font-weight: bold;
+}
+.nav {
+  background: #ff5733;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav-items {
+  list-style-type: none;
+  margin: auto;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:visited {
+  color: black;
+}
+
+.link:hover {
+  color: #ffc300;
+}
+.link:before {
+  color: black;
+}
+
+.items > h1 {
+  margin: auto;
+  justify-items: auto;
+}
+
+form {
+  background-image: linear-gradient(180deg, #ff5733, yellow);
+  border: 1px solid #dedede;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 35px;
+  max-width: 500px;
+  padding: 30px 50px;
+  border-radius: 35px;
+}
+
+input {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: black;
   color: white;
+  font-family: "Montserrat", sans-serif;
+  width: 100 px;
+  height: 40px;
+  margin: 20px 0px;
+  border-radius: 30px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#date {
+  color: #ff5733;
 }
