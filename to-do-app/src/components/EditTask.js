@@ -71,8 +71,8 @@
                     const {id,name,date}=task;
                     return(
                         <tr key={id}>
-                        <td>{edit===id?(<DatePicker selected={dateEdit} onChange={(d) => setDateEdit(d)} />):(<td>{date.slice(0,10)}</td>)}</td>   
-                        <td>{edit===id?(<input type="text" value={editText} onChange={(e)=>setEditText(e.target.value)} required/>):(<td>{name}</td>)}</td>
+                        <td>{edit===id?(<DatePicker selected={dateEdit} onChange={(d) => setDateEdit(d)} />):(<>{date.slice(0,10)}</>)}</td>   
+                        <td>{edit===id?(<input type="text" value={editText} onChange={(e)=>setEditText(e.target.value)} required/>):(<>{name}</>)}</td>
                         <td>{edit===id?(<button className="button" onClick={()=>handleSave(id)}>Save</button>):(<EditIcon onClick={()=>handleEdit(name,id,date)}/>)}</td> 
                         </tr>
                         
