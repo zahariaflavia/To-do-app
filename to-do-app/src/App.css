@@ -1,81 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,200&family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,200&family=Oswald:wght@300&display=swap");
 
 .app {
-  display:flex;
-  flex-direction:column;
-  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
 }
 
-.items{
-text-align:center;
+.items {
+  text-align: center;
 }
-.list{
-  background:#F4F2C2;
-}
-
-.table{
- margin:auto;
- margin-top:45px;
- background-image: linear-gradient(180deg, #FF5733, yellow);
- border-radius: 30px;
+.list {
+  background: #f4f2c2;
 }
 
-.table td{
+.table {
+  margin: auto;
+  margin-top: 45px;
+  background-image: linear-gradient(180deg, #ff5733, yellow);
+  border-radius: 30px;
+}
+
+.table td {
   padding: 15px 50px;
   text-align: start;
   font-weight: bold;
 }
-.nav{
-  background:#FF5733;
+.nav {
+  background: #ff5733;
 }
 
-.nav-container{
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-
-.nav-items{
-list-style-type:none;
-margin:auto;
+.nav-items {
+  list-style-type: none;
+  margin: auto;
 }
- 
-.link{
+
+.link {
   text-decoration: none;
-  color:black;
-  
+  color: black;
 }
 
-.link:visited{
-  color:black
+.link:visited {
+  color: black;
 }
 
-
-.link:hover{
-  color:#FFC300
+.link:hover {
+  color: #ffc300;
 }
-.link:before{
-  color:black
+.link:before {
+  color: black;
 }
 
-.items>h1{
-  margin:auto;
+.items > h1 {
+  margin: auto;
   justify-items: auto;
 }
 
 form {
-  background-image: linear-gradient(180deg, #FF5733, yellow);
+  background-image: linear-gradient(180deg, #ff5733, yellow);
   border: 1px solid #dedede;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: auto;
-  margin-top:35px;
+  margin-top: 35px;
   max-width: 500px;
   padding: 30px 50px;
-  border-radius:35px;
+  border-radius: 35px;
 }
 
 input {
@@ -87,16 +83,15 @@ input {
   margin-bottom: 20px;
 }
 
-
-.button{
-  background-color:black;
-  color:white;
-  font-family: 'Montserrat',sans-serif;
-  width:100 px;
-  height:40px;
-  margin:20px 0px;
+.button {
+  background-color: black;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  width: 100 px;
+  height: 40px;
+  margin: 20px 0px;
   border-radius: 30px;
 }
-#date{
-  color:#FF5733;
+#date {
+  color: #ff5733;
 }
