@@ -11,7 +11,7 @@ const AddTask = () => {
   let currentDate = today.toJSON().slice(0, 10);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("tasks"));
-    if (data) {
+    if (Array.isArray(data)) {
       setTasks(data);
     }
   }, []);
@@ -43,7 +43,7 @@ const AddTask = () => {
           status: "incomplete",
           date: date,
         };
-        console.log(date);
+        
         setTasks([...tasks, newTask]);
         setName("");
         setDate(new Date());
@@ -51,7 +51,7 @@ const AddTask = () => {
     }
   };
   return (
-    <div className="items c">
+    <main className="items">
       <form onSubmit={handleSubmit} className="form">
         <h3>What are your activities for today?</h3>
         <div>
@@ -92,7 +92,7 @@ const AddTask = () => {
           </button>
         </div>
       </form>
-    </div>
+    </main>
   );
 };
 

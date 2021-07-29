@@ -6,7 +6,7 @@ const UpcomingActivities = () => {
   const compareDates = (t1, t2) => t1.date.localeCompare(t2.date);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("tasks"));
-    if (data) {
+    if (Array.isArray(data)) {
       setTasks(data);
     }
   }, []);
@@ -15,7 +15,7 @@ const UpcomingActivities = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
   return (
-    <div className="items">
+    <main className="items">
       <table className="table">
         <tbody>
           {tasks
@@ -32,7 +32,7 @@ const UpcomingActivities = () => {
             })}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

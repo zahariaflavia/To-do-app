@@ -15,7 +15,7 @@ const EditTask = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("tasks"));
-    if (data) {
+    if (Array.isArray(data)) {
       setTasks(data);
     }
   }, []);
@@ -28,7 +28,6 @@ const EditTask = () => {
     let auxDate;
     if (!dateEdit) {
       setDateError("The date is not valid!");
-      console.log(dateEdit);
       setTimeout(() => {
         setDateError("");
         setDateEdit(new Date());
@@ -72,66 +71,62 @@ const EditTask = () => {
   };
 
   return (
-    <div>
-      <div className="items">
-        {nameError && <h5>{nameError}</h5>}
-        {dateError && <h5>{dateError}</h5>}
-        {tasks.filter((task) => task.status === "incomplete").length === 0 ? (
-          <h2>There are no incomplete activities to be displayed</h2>
-        ) : (
-          <table className="table">
-            <tbody>
-              {tasks
-                .filter((task) => task.status === "incomplete")
-                .sort(compareDates)
-                .map((task) => {
-                  const { id, name, date } = task;
-                  return (
-                    <tr key={id}>
-                      <td>
-                        {edit === id ? (
-                          <DatePicker
-                            selected={dateEdit}
-                            onChange={(d) => setDateEdit(d)}
-                          />
-                        ) : (
-                          <>{date.slice(0, 10)}</>
-                        )}
-                      </td>
-                      <td>
-                        {edit === id ? (
-                          <input
-                            type="text"
-                            value={editText}
-                            onChange={(e) => setEditText(e.target.value)}
-                            required
-                          />
-                        ) : (
-                          <>{name}</>
-                        )}
-                      </td>
-                      <td>
-                        {edit === id ? (
-                          <button
-                            className="button"
-                            onClick={() => handleSave(id)}
-                          >
-                            Save
-                          </button>
-                        ) : (
-                          <EditIcon
-                            onClick={() => handleEdit(name, id, date)}
-                          />
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
-        )}
-      </div>
-    </div>
+    <main className="items">
+      {nameError && <h5>{nameError}</h5>}
+      {dateError && <h5>{dateError}</h5>}
+      {tasks.filter((task) => task.status === "incomplete").length === 0 ? (
+        <h2>There are no incomplete activities to be displayed</h2>
+      ) : (
+        <table className="table">
+          <tbody>
+            {tasks
+              .filter((task) => task.status === "incomplete")
+              .sort(compareDates)
+              .map((task) => {
+                const { id, name, date } = task;
+                return (
+                  <tr key={id}>
+                    <td>
+                      {edit === id ? (
+                        <DatePicker
+                          selected={dateEdit}
+                          onChange={(d) => setDateEdit(d)}
+                        />
+                      ) : (
+                        <>{date.slice(0, 10)}</>
+                      )}
+                    </td>
+                    <td>
+                      {edit === id ? (
+                        <input
+                          type="text"
+                          value={editText}
+                          onChange={(e) => setEditText(e.target.value)}
+                          required
+                        />
+                      ) : (
+                        <>{name}</>
+                      )}
+                    </td>
+                    <td>
+                      {edit === id ? (
+                        <button
+                          className="button"
+                          onClick={() => handleSave(id)}
+                        >
+                          Save
+                        </button>
+                      ) : (
+                        <EditIcon onClick={() => handleEdit(name, id, date)} />
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      )}
+    </main>
   );
 };
 

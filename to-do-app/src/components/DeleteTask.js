@@ -5,7 +5,7 @@ const DeleteTask = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("tasks"));
-    if (data) {
+    if (Array.isArray(data)) {
       setTasks(data);
     }
   }, []);
@@ -20,7 +20,7 @@ const DeleteTask = () => {
     setTasks(aux);
   };
   return (
-    <div className="items">
+    <main className="items">
       {tasks.filter((task) => task.status === "incomplete").length === 0 ? (
         <h2>There are no activities to pe displayed</h2>
       ) : (
@@ -44,7 +44,7 @@ const DeleteTask = () => {
           </tbody>
         </table>
       )}
-    </div>
+    </main>
   );
 };
 export default DeleteTask;

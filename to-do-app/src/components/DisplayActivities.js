@@ -7,7 +7,7 @@ const DisplayActivities = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("tasks"));
-    if (data) {
+    if (Array.isArray(data)) {
       let aux = data.filter(
         (d) => d.date.slice(0, 10).localeCompare(currentDate) >= 0
       );
@@ -26,11 +26,12 @@ const DisplayActivities = () => {
   };
   let aux = tasks.filter((task) => task.date.slice(0, 10) === currentDate);
   return (
-    <div className="items">
+    <main className="items">
       <div>
         <h1>Welcome to Your Day</h1>
         <h2 id="date">{today.toString().slice(0, 15)}</h2>
-        {aux.filter((task) => task.status === "incomplete").length === 0 ? (
+        {aux.length !== 0 &&
+        aux.filter((task) => task.status === "incomplete").length === 0 ? (
           <h2>Congratulations! You finished all your activities for today!</h2>
         ) : (
           <h2>
@@ -83,7 +84,7 @@ const DisplayActivities = () => {
             })}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 
